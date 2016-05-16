@@ -21,4 +21,4 @@ def index(request):
 def health(request):
     return HttpResponse(PageView.objects.count())
 def test(request):
-    return HttpResponse(2 ** 4)
+    return HttpResponse(2 ** 5)
