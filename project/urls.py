@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from welcome.views import index, health, test
+from mcube.views import index, health, test
 
 urlpatterns = [
     # Examples:
