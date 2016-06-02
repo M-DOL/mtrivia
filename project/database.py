@@ -13,7 +13,7 @@ engines = {
 def config():
     engine = 'django.db.backends.mysql'
     name = 'db'
-    hostname = 'mysql-mtrivia.openshift.dsc.umich.edu'
+    hostname = 'mysql'
     if sys.platform != 'win32':
         return {
             'ENGINE': engine,
