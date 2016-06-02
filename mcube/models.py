@@ -1,17 +1,11 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
-class Colleges(models.Model):
-    college_name = models.CharField(max_length=50)
-
-class Users(models.Model):
-    user_first = models.CharField(max_length=20)
-    user_last = models.CharField(max_length=20)
-    college = models.ForeignKey(Colleges, on_delete=models.CASCADE)
 
 class Scores(models.Model):
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField()
     score = models.IntegerField()
 
 class PageView(models.Model):

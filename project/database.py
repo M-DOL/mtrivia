@@ -11,13 +11,24 @@ engines = {
 
 
 def config():
+    remote = False
     engine = 'django.db.backends.mysql'
     name = 'db'
+    hostname = 'http://mysql-mtrivia.openshift.dsc.umich.edu'
+    if remote:
+        return {
+            'ENGINE': engine,
+            'NAME': name,
+            'USER': 'admin',
+            'PASSWORD': 'admin',
+            'HOST': hostname,
+            'PORT': 3306,
+        }
     return {
         'ENGINE': engine,
         'NAME': name,
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'mysql',
-        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
