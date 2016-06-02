@@ -1,5 +1,5 @@
 import os
-
+import sys
 from django.conf import settings
 
 
@@ -11,11 +11,10 @@ engines = {
 
 
 def config():
-    remote = False
     engine = 'django.db.backends.mysql'
     name = 'db'
     hostname = 'http://mysql-mtrivia.openshift.dsc.umich.edu'
-    if remote:
+    if sys.platform != 'win32':
         return {
             'ENGINE': engine,
             'NAME': name,
