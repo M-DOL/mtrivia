@@ -9,23 +9,19 @@ engines = {
     'mysql': 'django.db.backends.mysql',
 }
 
-#
 def config():
-    engine = 'django.db.backends.mysql'
-    name = 'db'
-    hostname = 'mysql'
     if sys.platform != 'win32':
         return {
-            'ENGINE': engine,
-            'NAME': name,
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'db',
             'USER': 'admin',
             'PASSWORD': 'admin',
-            'HOST': hostname,
+            'HOST': 'mysql',
             'PORT': 3306,
         }
     return {
-        'ENGINE': engine,
-        'NAME': name,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
