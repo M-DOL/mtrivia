@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Scores(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     score = models.IntegerField()
 
 class PageView(models.Model):

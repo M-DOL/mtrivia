@@ -1,0 +1,31 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?erg06e');
+    src:    url('fonts/icomoon.eot?erg06e#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?erg06e') format('truetype'),
+        url('fonts/icomoon.woff?erg06e') format('woff'),
+        url('fonts/icomoon.svg?erg06e#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-divide:before {
+    content: "\e900";
+}
+
