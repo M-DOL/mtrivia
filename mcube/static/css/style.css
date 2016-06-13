@@ -1,11 +1,7 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?erg06e');
-    src:    url('fonts/icomoon.eot?erg06e#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?erg06e') format('truetype'),
-        url('fonts/icomoon.woff?erg06e') format('woff'),
-        url('fonts/icomoon.svg?erg06e#icomoon') format('svg');
+    src: url('../fonts/icomoon.ttf?erg06e') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

@@ -3,24 +3,41 @@
  **/
 "use strict";
 
-function add(x, y)
+var num1 = document.getElementById('num1'), num2 = document.getElementById('num2'), res;
+function add()
 {
-    return x + y;
+    if(num2.value !== "")
+    {
+        res = parseInt(num1.value) + parseInt(num2.value);
+        output();
+    }
 }
-function subtract(x, y)
+function subtract()
 {
-    return x - y;
+    if(num2.value !== "")
+    {
+        res = parseInt(num1.value) - parseInt(num2.value);
+        output();
+    }
 }
-function mult(x, y)
+function mult()
 {
-    return x * y;
+    if(num2.value !== "")
+    {
+        res = parseInt(num1.value) * parseInt(num2.value);
+        output();
+    }
 }
-function divide(x, y)
+function divide()
 {
-    return x / y;
+    if(num2.value !== "")
+    {
+        res = parseInt(num1.value) / parseInt(num2.value);
+        output()
+    }
 }
-function main()
+function output()
 {
-    log(add(1, 2));
+    num1.value = res;
+    num2.value = "";
 }
-main();
