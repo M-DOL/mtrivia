@@ -46,6 +46,7 @@ def create_user(request):
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
+        form = form.cleaned_data
         user = authenticate(username=form.username, password=form.password)
         if(user is None):
             #Redirect and error
