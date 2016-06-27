@@ -49,7 +49,7 @@ def login(request):
         form = form.cleaned_data
         user = authenticate(username=form.username, password=form.password)
         if(user is None):
-            #Redirect and error
+            #Redirect and error#
             return redirect('/')
         else:
             request.session['user'] = user
