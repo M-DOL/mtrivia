@@ -4,6 +4,7 @@
 "use strict";
 //Gets form fields
 var num1 = document.getElementById('num1'), num2 = document.getElementById('num2'), res;
+//Each function stores the result in operand 1.
 function add()
 {
     if(num2.value !== "")
