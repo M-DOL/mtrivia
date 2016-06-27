@@ -2,7 +2,7 @@
  * Created by Matt on 5/20/2016.
  **/
 "use strict";
-
+//Gets form fields
 var num1 = document.getElementById('num1'), num2 = document.getElementById('num2'), res;
 function add()
 {
