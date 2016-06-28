@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fc1d455-b60c-47b6-9499-35b0e0954d5d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcube/static/js/calculator.js" afterPath="$PROJECT_DIR$/mcube/static/js/calculator.js" />
-    </list>
+    <list default="true" id="6fc1d455-b60c-47b6-9499-35b0e0954d5d" name="Default" comment="" />
     <ignored path="OpenShift Enterprise.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
