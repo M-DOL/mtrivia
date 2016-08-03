@@ -9,7 +9,7 @@ function add()
 {
     if(num2.value !== "")
     {
-        res = parseInt(num1.value) + parseInt(num2.value);
+        res = parseFloat(num1.value) + parseFloat(num2.value);
         output();
     }
 }
@@ -17,7 +17,7 @@ function subtract()
 {
     if(num2.value !== "")
     {
-        res = parseInt(num1.value) - parseInt(num2.value);
+        res = parseFloat(num1.value) - parseFloat(num2.value);
         output();
     }
 }
@@ -25,7 +25,7 @@ function mult()
 {
     if(num2.value !== "")
     {
-        res = parseInt(num1.value) * parseInt(num2.value);
+        res = parseFloat(num1.value) * parseFloat(num2.value);
         output();
     }
 }
@@ -33,7 +33,7 @@ function divide()
 {
     if(num2.value !== "")
     {
-        res = parseInt(num1.value) / parseInt(num2.value);
+        res = parseFloat(num1.value) / parseFloat(num2.value);
         output()
     }
 }

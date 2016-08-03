@@ -1,0 +1,4281 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2016-05-16T17:59:08Z
+    labels:
+      app: django
+    name: django
+    namespace: mtrivia
+    resourceVersion: "9024374"
+    selfLink: /oapi/v1/namespaces/mtrivia/buildconfigs/django
+    uid: e2d9029e-1b8f-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: python:2.7
+          namespace: openshift
+      type: Source
+    triggers:
+    - generic:
+        secret: 320e0701c7342d85
+      type: Generic
+    - github:
+        secret: 42d27ca9167d291e
+      type: GitHub
+    - imageChange:
+        lastTriggeredImageID: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    lastVersion: 25
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "1"
+      openshift.io/build.pod-name: django-1-build
+    creationTimestamp: 2016-05-16T17:59:08Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-1
+    namespace: mtrivia
+    resourceVersion: "3341342"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-1
+    uid: e2e1fca2-1b8f-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 5f88e3ebeed45d5bbc78c57cdcbc6dda97d526c5
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Init
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-05-16T18:00:34Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 83000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-05-16T17:59:11Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "10"
+      openshift.io/build.pod-name: django-10-build
+    creationTimestamp: 2016-06-02T16:07:49Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-10
+    namespace: mtrivia
+    resourceVersion: "5176869"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-10
+    uid: 27564879-28dc-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 0b056607cd97a854777e716549adcf7165e38486
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T16:08:51Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 59000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T16:07:52Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "11"
+      openshift.io/build.pod-name: django-11-build
+    creationTimestamp: 2016-06-02T16:14:10Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-11
+    namespace: mtrivia
+    resourceVersion: "5177550"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-11
+    uid: 0a531029-28dd-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: bfe0498a8ec4eae3750afed0151789b46a3e3744
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T16:15:11Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 56000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T16:14:15Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "12"
+      openshift.io/build.pod-name: django-12-build
+    creationTimestamp: 2016-06-02T16:24:34Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-12
+    namespace: mtrivia
+    resourceVersion: "5178678"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-12
+    uid: 7e4c1950-28de-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 718618482d4ff135204830e8c1b2ed3c2b62b8f2
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T16:25:31Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 54000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T16:24:37Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "13"
+      openshift.io/build.pod-name: django-13-build
+    creationTimestamp: 2016-06-02T16:27:17Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-13
+    namespace: mtrivia
+    resourceVersion: "5179033"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-13
+    uid: def964e6-28de-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 68ec45f90788420aa2fe2aa8b9143fa695890a6b
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T16:28:11Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 52000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T16:27:19Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "14"
+      openshift.io/build.pod-name: django-14-build
+    creationTimestamp: 2016-06-02T17:40:19Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-14
+    namespace: mtrivia
+    resourceVersion: "5187142"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-14
+    uid: 1333b904-28e9-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 1c70561526177dbe6ebe2b3e5500aa23ff92ea20
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T17:41:11Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 49000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T17:40:22Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "15"
+      openshift.io/build.pod-name: django-15-build
+    creationTimestamp: 2016-06-02T17:53:26Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-15
+    namespace: mtrivia
+    resourceVersion: "5188607"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-15
+    uid: e858393a-28ea-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 11b5ba3c2831b345e615c9c1a4371df416d69922
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T17:54:21Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 51000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T17:53:30Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "16"
+      openshift.io/build.pod-name: django-16-build
+    creationTimestamp: 2016-06-02T18:35:54Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-16
+    namespace: mtrivia
+    resourceVersion: "5193230"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-16
+    uid: d721b0cd-28f0-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: c5548e69cdce6e1bd2e315c3fb2a0cad72615391
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T18:37:01Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 64000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T18:35:57Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "17"
+      openshift.io/build.pod-name: django-17-build
+    creationTimestamp: 2016-06-09T20:52:06Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-17
+    namespace: mtrivia
+    resourceVersion: "6169847"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-17
+    uid: 068859aa-2e84-11e6-9365-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 769c0ba42aed8f2e12d7238fbb170cbfd69bd1e5
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Migrated.
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-09T20:52:54Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 46000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-09T20:52:08Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "18"
+      openshift.io/build.pod-name: django-18-build
+    creationTimestamp: 2016-06-13T15:38:18Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-18
+    namespace: mtrivia
+    resourceVersion: "7163742"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-18
+    uid: d9db9adc-317c-11e6-ac99-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 1a54643b3194b4125c74d70d4cc7ba88f7aff3a8
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: HTML updates
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-13T15:39:13Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 48000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-13T15:38:25Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "19"
+      openshift.io/build.pod-name: django-19-build
+    creationTimestamp: 2016-06-13T20:26:08Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-19
+    namespace: mtrivia
+    resourceVersion: "7209660"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-19
+    uid: 0fb27fab-31a5-11e6-ac90-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: e147bba82da6b63741e2bbcafa8a85ae87511e8d
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Calculator complete.
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-13T20:26:57Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 45000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-13T20:26:12Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "2"
+      openshift.io/build.pod-name: django-2-build
+    creationTimestamp: 2016-05-16T19:24:48Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-2
+    namespace: mtrivia
+    resourceVersion: "3344911"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-2
+    uid: dab698ca-1b9b-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: cfbbf8a39a668fbbc5512265fa11233da936b32d
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Update
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-05-16T19:25:52Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 61000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-05-16T19:24:51Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "20"
+      openshift.io/build.pod-name: django-20-build
+      openshift.io/jenkins-build-uri: job/OpenShift Sample/7
+    creationTimestamp: 2016-06-15T15:03:15Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-20
+    namespace: mtrivia
+    resourceVersion: "7484625"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-20
+    uid: 495d6b03-330a-11e6-ac90-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: e147bba82da6b63741e2bbcafa8a85ae87511e8d
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Calculator complete.
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-15T15:04:11Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 53000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-15T15:03:18Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "21"
+      openshift.io/build.pod-name: django-21-build
+      openshift.io/jenkins-build-uri: job/MTrivia/9
+    creationTimestamp: 2016-06-23T14:55:52Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-21
+    namespace: mtrivia
+    resourceVersion: "8598387"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-21
+    uid: 9467121d-3952-11e6-a40d-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: e147bba82da6b63741e2bbcafa8a85ae87511e8d
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Calculator complete.
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-23T14:56:47Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 51000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-23T14:55:56Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "22"
+      openshift.io/build.pod-name: django-22-build
+      openshift.io/jenkins-build-uri: job/MTrivia/10
+    creationTimestamp: 2016-06-23T15:02:42Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-22
+    namespace: mtrivia
+    resourceVersion: "8599080"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-22
+    uid: 8949314d-3953-11e6-a40d-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: e147bba82da6b63741e2bbcafa8a85ae87511e8d
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Calculator complete.
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-23T15:03:45Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 59000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-23T15:02:46Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "23"
+      openshift.io/build.pod-name: django-23-build
+    creationTimestamp: 2016-06-27T14:25:23Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-23
+    namespace: mtrivia
+    resourceVersion: "9019063"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-23
+    uid: fc465184-3c72-11e6-a40d-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: fa16b4ff84d1c87c72215c892b15afab5c6e1451
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Login form
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-27T14:26:22Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 55000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-27T14:25:27Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "24"
+      openshift.io/build.pod-name: django-24-build
+    creationTimestamp: 2016-06-27T14:27:50Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-24
+    namespace: mtrivia
+    resourceVersion: "9019292"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-24
+    uid: 53a1c0f3-3c73-11e6-a40d-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: c234cff84d6f3ac60ffa6341d960d350d05a7969
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Login form
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-27T14:28:46Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 53000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-27T14:27:53Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "25"
+      openshift.io/build.pod-name: django-25-build
+    creationTimestamp: 2016-06-27T15:42:05Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-25
+    namespace: mtrivia
+    resourceVersion: "9024458"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-25
+    uid: b352ae3b-3c7d-11e6-a40d-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 01190f78186610021e3b58e90bce1d7de6c4d743
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Update
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-27T15:43:04Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 55000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-27T15:42:09Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "3"
+      openshift.io/build.pod-name: django-3-build
+    creationTimestamp: 2016-05-16T19:26:58Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-3
+    namespace: mtrivia
+    resourceVersion: "3345059"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-3
+    uid: 281ba7ca-1b9c-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 1b9f0375f40d0313d318611bb0d205ca656e4af0
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Update
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-05-16T19:27:44Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 43000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-05-16T19:27:01Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "4"
+      openshift.io/build.pod-name: django-4-build
+    creationTimestamp: 2016-05-17T14:24:25Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-4
+    namespace: mtrivia
+    resourceVersion: "3388980"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-4
+    uid: 0e83bfdd-1c3b-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 279db786e76bcb94d90dc66bd594035f2c97d5ff
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: DB
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-05-17T14:25:22Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 54000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-05-17T14:24:28Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "5"
+      openshift.io/build.pod-name: django-5-build
+    creationTimestamp: 2016-05-17T14:29:39Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-5
+    namespace: mtrivia
+    resourceVersion: "3389317"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-5
+    uid: c9c2e49b-1c3b-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: ffd97d43ebe7f0c7b888d6f06cc6e8d581144b93
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: DB
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-05-17T14:30:32Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 50000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-05-17T14:29:42Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "6"
+      openshift.io/build.pod-name: django-6-build
+    creationTimestamp: 2016-05-17T15:57:25Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-6
+    namespace: mtrivia
+    resourceVersion: "3393591"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-6
+    uid: 0c5215f0-1c48-11e6-9c79-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: ffd97d43ebe7f0c7b888d6f06cc6e8d581144b93
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: DB
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-05-17T15:58:22Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 55000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-05-17T15:57:27Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "7"
+      openshift.io/build.pod-name: django-7-build
+    creationTimestamp: 2016-06-02T15:25:11Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-7
+    namespace: mtrivia
+    resourceVersion: "5172518"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-7
+    uid: 328eeb28-28d6-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: b7f99b7d7b05539d707f6a6cfaee6373d34d5922
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Update
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T15:26:01Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 47000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T15:25:14Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "8"
+      openshift.io/build.pod-name: django-8-build
+    creationTimestamp: 2016-06-02T15:49:13Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-8
+    namespace: mtrivia
+    resourceVersion: "5174909"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-8
+    uid: 8dbbbe5b-28d9-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 149086f80a9070b7d0b5eb91167041b001c8040f
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Update
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T15:50:01Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 46000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T15:49:15Z
+- apiVersion: v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build.number: "9"
+      openshift.io/build.pod-name: django-9-build
+    creationTimestamp: 2016-06-02T16:01:34Z
+    labels:
+      app: django
+      buildconfig: django
+      openshift.io/build-config.name: django
+    name: django-9
+    namespace: mtrivia
+    resourceVersion: "5176212"
+    selfLink: /oapi/v1/namespaces/mtrivia/builds/django-9
+    uid: 47750e56-28db-11e6-a6ca-005056ab4e14
+  spec:
+    output:
+      pushSecret:
+        name: builder-dockercfg-mqdyp
+      to:
+        kind: ImageStreamTag
+        name: django:latest
+    resources: {}
+    revision:
+      git:
+        author:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        commit: 2ef6a5a8d20363835a9387854aeefd6c2937b6b8
+        committer:
+          email: mjdolan@umich.edu
+          name: M-DOL
+        message: Added mySQL install
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/M-DOL/mtrivia.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/python-27-rhel7:latest
+      type: Source
+  status:
+    completionTimestamp: 2016-06-02T16:02:21Z
+    config:
+      kind: BuildConfig
+      name: django
+      namespace: mtrivia
+    duration: 45000000000
+    outputDockerImageReference: 172.30.237.129:5000/mtrivia/django:latest
+    phase: Complete
+    startTimestamp: 2016-06-02T16:01:36Z
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/image.dockerRepositoryCheck: 2016-05-16T17:59:08Z
+    creationTimestamp: 2016-05-16T17:59:08Z
+    labels:
+      app: django
+    name: django
+    namespace: mtrivia
+    resourceVersion: "9024446"
+    selfLink: /oapi/v1/namespaces/mtrivia/imagestreams/django
+    uid: e2d7505e-1b8f-11e6-9c79-005056ab4e14
+  spec: {}
+  status:
+    dockerImageRepository: 172.30.183.221:5000/mtrivia/django
+    tags:
+    - items:
+      - created: 2016-06-27T15:43:04Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+        image: sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+      - created: 2016-06-27T14:28:45Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:3e58f06693f4b69a7b9b30f5c1dd98e4126b2324ac5ed692ea6814d64c22889f
+        image: sha256:3e58f06693f4b69a7b9b30f5c1dd98e4126b2324ac5ed692ea6814d64c22889f
+      - created: 2016-06-27T14:26:21Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:05df8edad6bffbe42acf73af41c920d47c4aa9e633cb8a25977032c8db67f48c
+        image: sha256:05df8edad6bffbe42acf73af41c920d47c4aa9e633cb8a25977032c8db67f48c
+      - created: 2016-06-23T15:03:43Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:9a20a288522df8a44d36ee81e92f653b8315607d5d59ad812087ba6a9ae4f4fc
+        image: sha256:9a20a288522df8a44d36ee81e92f653b8315607d5d59ad812087ba6a9ae4f4fc
+      - created: 2016-06-23T14:56:46Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:1c48a7f3afb48eae1afe92f64b0578c0271e551d4e22bf2f9db3aedbea9148d2
+        image: sha256:1c48a7f3afb48eae1afe92f64b0578c0271e551d4e22bf2f9db3aedbea9148d2
+      - created: 2016-06-15T15:04:10Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:2333f47cfed31701e008b63e42436e673188f42505f6943e0eb8c65630ac6e4a
+        image: sha256:2333f47cfed31701e008b63e42436e673188f42505f6943e0eb8c65630ac6e4a
+      - created: 2016-06-13T20:26:56Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:8a362949be090a5d1a4bb0a1d9abf3f33469819c2c04aa9f3b41a09a09b85471
+        image: sha256:8a362949be090a5d1a4bb0a1d9abf3f33469819c2c04aa9f3b41a09a09b85471
+      - created: 2016-06-13T15:39:12Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:df04b4f73886090db065dc32e889261579299eec6b331cd5150a9cd9dc831170
+        image: sha256:df04b4f73886090db065dc32e889261579299eec6b331cd5150a9cd9dc831170
+      - created: 2016-06-09T20:52:52Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:8b9c262cafdc1adf7c29510e9151bce195f707c404b1ddc67f983a014abae10e
+        image: sha256:8b9c262cafdc1adf7c29510e9151bce195f707c404b1ddc67f983a014abae10e
+      - created: 2016-06-02T18:36:55Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:0fffc468e8a2f17a827ea325768829fbb1f1c2c01fb3d53c70c15454c619b17b
+        image: sha256:0fffc468e8a2f17a827ea325768829fbb1f1c2c01fb3d53c70c15454c619b17b
+      - created: 2016-06-02T17:54:16Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:abbe0c205c116fe23c5ef66dfe2369c7a602bcc76c1ccae1528fc9adee33f803
+        image: sha256:abbe0c205c116fe23c5ef66dfe2369c7a602bcc76c1ccae1528fc9adee33f803
+      - created: 2016-06-02T17:41:06Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:4703f71bea4c0a584bba27cc48251ce8a554c6e31c29c1ac3c9e995ca2048155
+        image: sha256:4703f71bea4c0a584bba27cc48251ce8a554c6e31c29c1ac3c9e995ca2048155
+      - created: 2016-06-02T16:28:01Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:db10b8da5d16f3b59e03c3005d87e2b3f0dc272d08d7f6c5d6d0f479cdd77b4a
+        image: sha256:db10b8da5d16f3b59e03c3005d87e2b3f0dc272d08d7f6c5d6d0f479cdd77b4a
+      - created: 2016-06-02T16:25:21Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:3b71ef42896fb15d1e748541ca93bd80a768b7318f316114e3ad4d3a264bac80
+        image: sha256:3b71ef42896fb15d1e748541ca93bd80a768b7318f316114e3ad4d3a264bac80
+      - created: 2016-06-02T16:15:06Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:acc677d8e19c8dd3689ab26ecbc7b6f3dd569def2d26730f0858296e559c9963
+        image: sha256:acc677d8e19c8dd3689ab26ecbc7b6f3dd569def2d26730f0858296e559c9963
+      - created: 2016-06-02T16:08:41Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:f10cd7d4309cfe2eb8f37150715d52491c169527fff84cd0791b055c3fe5300f
+        image: sha256:f10cd7d4309cfe2eb8f37150715d52491c169527fff84cd0791b055c3fe5300f
+      - created: 2016-06-02T16:02:20Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:740cdc7bb78de3dfcb031b5bab63973fc517eabd655f49cf2d10d1a6f8a24845
+        image: sha256:740cdc7bb78de3dfcb031b5bab63973fc517eabd655f49cf2d10d1a6f8a24845
+      - created: 2016-06-02T15:49:57Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:5a9ecc55ad0eb8275ba019d1e3c2a882b9346caa55bf59b3bc46f31c72b53e40
+        image: sha256:5a9ecc55ad0eb8275ba019d1e3c2a882b9346caa55bf59b3bc46f31c72b53e40
+      - created: 2016-06-02T15:25:57Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:2efeb10a4e0882d3bec19b6299cc4c39c78d921f1ef4cbe63313b93ca565d313
+        image: sha256:2efeb10a4e0882d3bec19b6299cc4c39c78d921f1ef4cbe63313b93ca565d313
+      - created: 2016-05-17T15:58:15Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:761472987a27f0a83b8d53d40c6076c852f7fda485ecc58a5ed1170656003d6a
+        image: sha256:761472987a27f0a83b8d53d40c6076c852f7fda485ecc58a5ed1170656003d6a
+      - created: 2016-05-17T14:30:30Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c
+        image: sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c
+      - created: 2016-05-17T14:25:19Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:4166061f26aaa52ba797e29dddac70a96530681fde2411941453ac2e4777bd78
+        image: sha256:4166061f26aaa52ba797e29dddac70a96530681fde2411941453ac2e4777bd78
+      - created: 2016-05-16T19:27:41Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:ed29436e62a24ba2c36db34a99a76151a9c73c89b74d3586e4d42f45b7c00e25
+        image: sha256:ed29436e62a24ba2c36db34a99a76151a9c73c89b74d3586e4d42f45b7c00e25
+      - created: 2016-05-16T19:25:46Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:16f5523935698e22ec16e5e38174796b2a08ebe9d6f903d71f7ae678e2590bd8
+        image: sha256:16f5523935698e22ec16e5e38174796b2a08ebe9d6f903d71f7ae678e2590bd8
+      - created: 2016-05-16T18:00:29Z
+        dockerImageReference: 172.30.237.129:5000/mtrivia/django@sha256:392bf74e848000d4d9cf62812d0a8b1c7f1212d212f79c4fa60d363a083aeeb5
+        image: sha256:392bf74e848000d4d9cf62812d0a8b1c7f1212d212f79c4fa60d363a083aeeb5
+      tag: latest
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/image.dockerRepositoryCheck: 2016-07-20T18:15:23Z
+    creationTimestamp: 2016-07-20T18:15:21Z
+    generation: 2
+    labels:
+      app: jenkins
+    name: jenkins
+    namespace: mtrivia
+    resourceVersion: "14123545"
+    selfLink: /oapi/v1/namespaces/mtrivia/imagestreams/jenkins
+    uid: ebdd66cd-4ea5-11e6-9dad-005056ab4e14
+  spec:
+    dockerImageRepository: library/jenkins
+    tags:
+    - from:
+        kind: DockerImage
+        name: library/jenkins:1.595
+      name: "1.595"
+    - from:
+        kind: DockerImage
+        name: library/jenkins:1.596
+      name: "1.596"
+    - from:
+        kind: DockerImage
+        name: library/jenkins:2.0
+      name: "2.0"
+    - from:
+        kind: DockerImage
+        name: library/jenkins:2.3
+      name: "2.3"
+    - from:
+        kind: DockerImage
+        name: library/jenkins:latest
+      name: latest
+  status:
+    dockerImageRepository: 172.30.183.221:5000/mtrivia/jenkins
+    tags:
+    - items:
+      - created: 2016-07-20T18:15:23Z
+        dockerImageReference: library/jenkins@sha256:545757f911d33d57c35bb876883224c34932b947580935b2a1e065ca4fa3b2fe
+        image: sha256:545757f911d33d57c35bb876883224c34932b947580935b2a1e065ca4fa3b2fe
+      tag: "1.595"
+    - items:
+      - created: 2016-07-20T18:15:23Z
+        dockerImageReference: library/jenkins@sha256:6a0c96d60eb8117ca85b28c3537fb548cf1e547f780ace327ef8784df8623f91
+        image: sha256:6a0c96d60eb8117ca85b28c3537fb548cf1e547f780ace327ef8784df8623f91
+      tag: "1.596"
+    - items:
+      - created: 2016-07-20T18:15:23Z
+        dockerImageReference: library/jenkins@sha256:e6f668256b6a048e7041d0bb636425fdd45f50559f23633cb94a9baea59578ee
+        image: sha256:e6f668256b6a048e7041d0bb636425fdd45f50559f23633cb94a9baea59578ee
+      tag: "2.0"
+    - items:
+      - created: 2016-07-20T18:15:23Z
+        dockerImageReference: library/jenkins@sha256:b01187ae22d4a3e98fd74066fb082644fb37aa0c5fdc4e9ba90955e182e2a487
+        image: sha256:b01187ae22d4a3e98fd74066fb082644fb37aa0c5fdc4e9ba90955e182e2a487
+      tag: "2.3"
+    - items:
+      - created: 2016-07-20T18:15:23Z
+        dockerImageReference: library/jenkins@sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8
+        image: sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8
+      tag: latest
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2016-05-16T17:59:08Z
+    labels:
+      app: django
+    name: django
+    namespace: mtrivia
+    resourceVersion: "11104190"
+    selfLink: /oapi/v1/namespaces/mtrivia/deploymentconfigs/django
+    uid: e2dd9971-1b8f-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 1
+    selector:
+      deploymentconfig: django
+    strategy:
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: django
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - django
+        from:
+          kind: ImageStreamTag
+          name: django:latest
+        lastTriggeredImage: 172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    details:
+      causes:
+      - imageTrigger:
+          from:
+            kind: ImageStreamTag
+            name: django:latest
+        type: ImageChange
+    latestVersion: 26
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: 2016-07-20T18:15:21Z
+    labels:
+      app: jenkins
+    name: jenkins
+    namespace: mtrivia
+    resourceVersion: "14123546"
+    selfLink: /oapi/v1/namespaces/mtrivia/deploymentconfigs/jenkins
+    uid: ebdff45a-4ea5-11e6-9dad-005056ab4e14
+  spec:
+    replicas: 1
+    selector:
+      app: jenkins
+      deploymentconfig: jenkins
+    strategy:
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          app: jenkins
+          deploymentconfig: jenkins
+      spec:
+        containers:
+        - image: library/jenkins@sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8
+          imagePullPolicy: Always
+          name: jenkins
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 50000
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/jenkins_home
+            name: jenkins-volume-1
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: jenkins-volume-1
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - jenkins
+        from:
+          kind: ImageStreamTag
+          name: jenkins:latest
+        lastTriggeredImage: library/jenkins@sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8
+      type: ImageChange
+  status:
+    details:
+      causes:
+      - imageTrigger:
+          from:
+            kind: ImageStreamTag
+            name: jenkins:latest
+        type: ImageChange
+    latestVersion: 1
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    creationTimestamp: 2016-07-25T18:00:44Z
+    labels:
+      template: jenkins-ephemeral-template
+    name: jenkins2
+    namespace: mtrivia
+    resourceVersion: "15310023"
+    selfLink: /oapi/v1/namespaces/mtrivia/deploymentconfigs/jenkins2
+    uid: b4ffd565-5291-11e6-8c61-005056ab4e14
+  spec:
+    replicas: 1
+    selector:
+      name: jenkins2
+    strategy:
+      recreateParams: {}
+      resources: {}
+      type: Recreate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          name: jenkins2
+      spec:
+        containers:
+        - env:
+          - name: JENKINS_PASSWORD
+            value: password
+          image: 172.30.183.221:5000/openshift/jenkins@sha256:9b4d72ecee592d7f9624ee9fc62ea90ead0a07fff862af29a8ece61aa5969af1
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 3
+          name: jenkins
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 3
+            timeoutSeconds: 3
+          resources:
+            limits:
+              memory: 512Mi
+          securityContext:
+            capabilities: {}
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/lib/jenkins
+            name: jenkins2-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: jenkins2-data
+    triggers:
+    - imageChangeParams:
+        containerNames:
+        - jenkins
+        from:
+          kind: ImageStreamTag
+          name: jenkins:latest
+          namespace: openshift
+        lastTriggeredImage: 172.30.183.221:5000/openshift/jenkins@sha256:9b4d72ecee592d7f9624ee9fc62ea90ead0a07fff862af29a8ece61aa5969af1
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    details:
+      causes:
+      - type: ConfigChange
+    latestVersion: 1
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    creationTimestamp: 2016-05-16T20:26:51Z
+    labels:
+      template: mysql-ephemeral-template
+    name: mysql
+    namespace: mtrivia
+    resourceVersion: "3392835"
+    selfLink: /oapi/v1/namespaces/mtrivia/deploymentconfigs/mysql
+    uid: 859e4573-1ba4-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 1
+    selector:
+      name: mysql
+    strategy:
+      recreateParams: {}
+      resources: {}
+      type: Recreate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          name: mysql
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_USER
+            value: admin
+          - name: MYSQL_PASSWORD
+            value: admin
+          - name: MYSQL_DATABASE
+            value: db
+          image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+          imagePullPolicy: IfNotPresent
+          name: mysql
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          resources: {}
+          securityContext:
+            capabilities: {}
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/lib/mysql/data
+            name: mysql-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: mysql-data
+    triggers:
+    - imageChangeParams:
+        containerNames:
+        - mysql
+        from:
+          kind: ImageStreamTag
+          name: mysql:latest
+          namespace: openshift
+        lastTriggeredImage: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    details:
+      causes:
+      - type: ConfigChange
+    latestVersion: 2
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3341318","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:392bf74e848000d4d9cf62812d0a8b1c7f1212d212f79c4fa60d363a083aeeb5"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:392bf74e848000d4d9cf62812d0a8b1c7f1212d212f79c4fa60d363a083aeeb5","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":1,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-16T18:00:29Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-1
+    namespace: mtrivia
+    resourceVersion: "3344975"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-1
+    uid: 139ec9cd-1b90-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-1
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-1
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-1
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:392bf74e848000d4d9cf62812d0a8b1c7f1212d212f79c4fa60d363a083aeeb5
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/desired-replicas: "0"
+      kubectl.kubernetes.io/update-source-id: django-9:a841475a-28d9-11e6-a6ca-005056ab4e14
+      openshift.io/deployer-pod.name: django-10-deploy
+      openshift.io/deployment-config.latest-version: "10"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Failed
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5176196","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:740cdc7bb78de3dfcb031b5bab63973fc517eabd655f49cf2d10d1a6f8a24845"}},{"type":"ConfigChange"}],"replicas":0,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:740cdc7bb78de3dfcb031b5bab63973fc517eabd655f49cf2d10d1a6f8a24845","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":10,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T16:02:20Z
+    generation: 1
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-10
+    namespace: mtrivia
+    resourceVersion: "5176235"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-10
+    uid: 62fb982d-28db-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-10
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "10"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-10
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-10
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:740cdc7bb78de3dfcb031b5bab63973fc517eabd655f49cf2d10d1a6f8a24845
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 1
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/desired-replicas: "0"
+      kubectl.kubernetes.io/update-source-id: django-9:a841475a-28d9-11e6-a6ca-005056ab4e14
+      openshift.io/deployer-pod.name: django-11-deploy
+      openshift.io/deployment-config.latest-version: "11"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Failed
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5176829","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:f10cd7d4309cfe2eb8f37150715d52491c169527fff84cd0791b055c3fe5300f"}},{"type":"ConfigChange"}],"replicas":0,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:f10cd7d4309cfe2eb8f37150715d52491c169527fff84cd0791b055c3fe5300f","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":11,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T16:08:41Z
+    generation: 1
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-11
+    namespace: mtrivia
+    resourceVersion: "5176866"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-11
+    uid: 45e4ecab-28dc-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-11
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "11"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-11
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-11
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:f10cd7d4309cfe2eb8f37150715d52491c169527fff84cd0791b055c3fe5300f
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 1
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "0"
+      openshift.io/deployer-pod.name: django-12-deploy
+      openshift.io/deployment-config.latest-version: "12"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5177526","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:acc677d8e19c8dd3689ab26ecbc7b6f3dd569def2d26730f0858296e559c9963"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:acc677d8e19c8dd3689ab26ecbc7b6f3dd569def2d26730f0858296e559c9963","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":12,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T16:15:07Z
+    generation: 5
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-12
+    namespace: mtrivia
+    resourceVersion: "5179234"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-12
+    uid: 2bdeab8c-28dd-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-12
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "12"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-12
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-12
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:acc677d8e19c8dd3689ab26ecbc7b6f3dd569def2d26730f0858296e559c9963
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 5
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/desired-replicas: "0"
+      kubectl.kubernetes.io/update-source-id: django-12:2bdeab8c-28dd-11e6-a6ca-005056ab4e14
+      openshift.io/deployer-pod.name: django-13-deploy
+      openshift.io/deployment-config.latest-version: "13"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Failed
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5178640","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:3b71ef42896fb15d1e748541ca93bd80a768b7318f316114e3ad4d3a264bac80"}},{"type":"ConfigChange"}],"replicas":0,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:3b71ef42896fb15d1e748541ca93bd80a768b7318f316114e3ad4d3a264bac80","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":13,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T16:25:21Z
+    generation: 1
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-13
+    namespace: mtrivia
+    resourceVersion: "5178675"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-13
+    uid: 9a271955-28de-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-13
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "13"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-13
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-13
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:3b71ef42896fb15d1e748541ca93bd80a768b7318f316114e3ad4d3a264bac80
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 1
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-14-deploy
+      openshift.io/deployment-config.latest-version: "14"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5178995","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:db10b8da5d16f3b59e03c3005d87e2b3f0dc272d08d7f6c5d6d0f479cdd77b4a"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:db10b8da5d16f3b59e03c3005d87e2b3f0dc272d08d7f6c5d6d0f479cdd77b4a","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":14,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T16:28:01Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-14
+    namespace: mtrivia
+    resourceVersion: "5187283"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-14
+    uid: f968bae5-28de-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-14
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "14"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-14
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-14
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:db10b8da5d16f3b59e03c3005d87e2b3f0dc272d08d7f6c5d6d0f479cdd77b4a
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-15-deploy
+      openshift.io/deployment-config.latest-version: "15"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5187116","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:4703f71bea4c0a584bba27cc48251ce8a554c6e31c29c1ac3c9e995ca2048155"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:4703f71bea4c0a584bba27cc48251ce8a554c6e31c29c1ac3c9e995ca2048155","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":15,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T17:41:07Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-15
+    namespace: mtrivia
+    resourceVersion: "5188888"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-15
+    uid: 2f7514e5-28e9-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-15
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "15"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-15
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-15
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:4703f71bea4c0a584bba27cc48251ce8a554c6e31c29c1ac3c9e995ca2048155
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-16-deploy
+      openshift.io/deployment-config.latest-version: "16"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5188582","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:abbe0c205c116fe23c5ef66dfe2369c7a602bcc76c1ccae1528fc9adee33f803"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:abbe0c205c116fe23c5ef66dfe2369c7a602bcc76c1ccae1528fc9adee33f803","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":16,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T17:54:16Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-16
+    namespace: mtrivia
+    resourceVersion: "5193404"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-16
+    uid: 05e36972-28eb-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-16
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "16"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-16
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-16
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:abbe0c205c116fe23c5ef66dfe2369c7a602bcc76c1ccae1528fc9adee33f803
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-17-deploy
+      openshift.io/deployment-config.latest-version: "17"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5193193","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:0fffc468e8a2f17a827ea325768829fbb1f1c2c01fb3d53c70c15454c619b17b"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:0fffc468e8a2f17a827ea325768829fbb1f1c2c01fb3d53c70c15454c619b17b","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":17,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T18:36:55Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-17
+    namespace: mtrivia
+    resourceVersion: "6169991"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-17
+    uid: fb29a4c7-28f0-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-17
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "17"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-17
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-17
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:0fffc468e8a2f17a827ea325768829fbb1f1c2c01fb3d53c70c15454c619b17b
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-18-deploy
+      openshift.io/deployment-config.latest-version: "18"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"6169823","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:8b9c262cafdc1adf7c29510e9151bce195f707c404b1ddc67f983a014abae10e"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:8b9c262cafdc1adf7c29510e9151bce195f707c404b1ddc67f983a014abae10e","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":18,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-09T20:52:52Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-18
+    namespace: mtrivia
+    resourceVersion: "7164051"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-18
+    uid: 225d596a-2e84-11e6-9365-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-18
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "18"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-18
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-18
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:8b9c262cafdc1adf7c29510e9151bce195f707c404b1ddc67f983a014abae10e
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-19-deploy
+      openshift.io/deployment-config.latest-version: "19"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"7163731","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:df04b4f73886090db065dc32e889261579299eec6b331cd5150a9cd9dc831170"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:df04b4f73886090db065dc32e889261579299eec6b331cd5150a9cd9dc831170","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":19,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-13T15:39:12Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-19
+    namespace: mtrivia
+    resourceVersion: "7209938"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-19
+    uid: fa116f63-317c-11e6-ac99-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-19
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "19"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-19
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-19
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:df04b4f73886090db065dc32e889261579299eec6b331cd5150a9cd9dc831170
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-2-deploy
+      openshift.io/deployment-config.latest-version: "2"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3344886","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:16f5523935698e22ec16e5e38174796b2a08ebe9d6f903d71f7ae678e2590bd8"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:16f5523935698e22ec16e5e38174796b2a08ebe9d6f903d71f7ae678e2590bd8","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":2,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-16T19:25:46Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-2
+    namespace: mtrivia
+    resourceVersion: "3345135"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-2
+    uid: fd63e9c5-1b9b-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-2
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "2"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-2
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-2
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:16f5523935698e22ec16e5e38174796b2a08ebe9d6f903d71f7ae678e2590bd8
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-20-deploy
+      openshift.io/deployment-config.latest-version: "20"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"7209647","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:8a362949be090a5d1a4bb0a1d9abf3f33469819c2c04aa9f3b41a09a09b85471"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:8a362949be090a5d1a4bb0a1d9abf3f33469819c2c04aa9f3b41a09a09b85471","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":20,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-13T20:26:56Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-20
+    namespace: mtrivia
+    resourceVersion: "7484752"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-20
+    uid: 2ca5b917-31a5-11e6-ac90-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-20
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "20"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-20
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-20
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:8a362949be090a5d1a4bb0a1d9abf3f33469819c2c04aa9f3b41a09a09b85471
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-21-deploy
+      openshift.io/deployment-config.latest-version: "21"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"7484613","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:2333f47cfed31701e008b63e42436e673188f42505f6943e0eb8c65630ac6e4a"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:2333f47cfed31701e008b63e42436e673188f42505f6943e0eb8c65630ac6e4a","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":21,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+      openshift.io/jenkins-build-uri: job/OpenShift Sample/7
+    creationTimestamp: 2016-06-15T15:04:10Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-21
+    namespace: mtrivia
+    resourceVersion: "8598521"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-21
+    uid: 6a09d393-330a-11e6-ac90-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-21
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "21"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-21
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-21
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:2333f47cfed31701e008b63e42436e673188f42505f6943e0eb8c65630ac6e4a
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-22-deploy
+      openshift.io/deployment-config.latest-version: "22"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"8598376","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:1c48a7f3afb48eae1afe92f64b0578c0271e551d4e22bf2f9db3aedbea9148d2"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:1c48a7f3afb48eae1afe92f64b0578c0271e551d4e22bf2f9db3aedbea9148d2","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":22,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+      openshift.io/jenkins-build-uri: job/MTrivia/9
+    creationTimestamp: 2016-06-23T14:56:46Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-22
+    namespace: mtrivia
+    resourceVersion: "8599299"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-22
+    uid: b50737ea-3952-11e6-a40d-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-22
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "22"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-22
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-22
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:1c48a7f3afb48eae1afe92f64b0578c0271e551d4e22bf2f9db3aedbea9148d2
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-23-deploy
+      openshift.io/deployment-config.latest-version: "23"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"8599066","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:9a20a288522df8a44d36ee81e92f653b8315607d5d59ad812087ba6a9ae4f4fc"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:9a20a288522df8a44d36ee81e92f653b8315607d5d59ad812087ba6a9ae4f4fc","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":23,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+      openshift.io/jenkins-build-uri: job/MTrivia/10
+    creationTimestamp: 2016-06-23T15:03:43Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-23
+    namespace: mtrivia
+    resourceVersion: "9019187"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-23
+    uid: ada5b344-3953-11e6-a40d-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-23
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "23"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-23
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-23
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:9a20a288522df8a44d36ee81e92f653b8315607d5d59ad812087ba6a9ae4f4fc
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-24-deploy
+      openshift.io/deployment-config.latest-version: "24"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"9019052","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:05df8edad6bffbe42acf73af41c920d47c4aa9e633cb8a25977032c8db67f48c"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:05df8edad6bffbe42acf73af41c920d47c4aa9e633cb8a25977032c8db67f48c","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":24,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-27T14:26:21Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-24
+    namespace: mtrivia
+    resourceVersion: "9019376"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-24
+    uid: 1e70c37c-3c73-11e6-a40d-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-24
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "24"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-24
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-24
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:05df8edad6bffbe42acf73af41c920d47c4aa9e633cb8a25977032c8db67f48c
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-25-deploy
+      openshift.io/deployment-config.latest-version: "25"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"9019281","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:3e58f06693f4b69a7b9b30f5c1dd98e4126b2324ac5ed692ea6814d64c22889f"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:3e58f06693f4b69a7b9b30f5c1dd98e4126b2324ac5ed692ea6814d64c22889f","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":25,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-27T14:28:45Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-25
+    namespace: mtrivia
+    resourceVersion: "9024633"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-25
+    uid: 747f76cc-3c73-11e6-a40d-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-25
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "25"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-25
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-25
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:3e58f06693f4b69a7b9b30f5c1dd98e4126b2324ac5ed692ea6814d64c22889f
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      openshift.io/deployer-pod.name: django-26-deploy
+      openshift.io/deployment-config.latest-version: "26"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "1"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"9024447","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":26,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-27T15:43:04Z
+    generation: 4
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-26
+    namespace: mtrivia
+    resourceVersion: "13899885"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-26
+    uid: d61d5898-3c7d-11e6-a40d-005056ab4e14
+  spec:
+    replicas: 1
+    selector:
+      deployment: django-26
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "26"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-26
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-26
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 4
+    replicas: 1
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-3-deploy
+      openshift.io/deployment-config.latest-version: "3"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3345038","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:ed29436e62a24ba2c36db34a99a76151a9c73c89b74d3586e4d42f45b7c00e25"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:ed29436e62a24ba2c36db34a99a76151a9c73c89b74d3586e4d42f45b7c00e25","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":3,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-16T19:27:41Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-3
+    namespace: mtrivia
+    resourceVersion: "3389065"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-3
+    uid: 41f9db00-1b9c-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-3
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "3"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-3
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-3
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:ed29436e62a24ba2c36db34a99a76151a9c73c89b74d3586e4d42f45b7c00e25
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-4-deploy
+      openshift.io/deployment-config.latest-version: "4"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3388961","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:4166061f26aaa52ba797e29dddac70a96530681fde2411941453ac2e4777bd78"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:4166061f26aaa52ba797e29dddac70a96530681fde2411941453ac2e4777bd78","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":4,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-17T14:25:20Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-4
+    namespace: mtrivia
+    resourceVersion: "3389449"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-4
+    uid: 2f1692f9-1c3b-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-4
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "4"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-4
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-4
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:4166061f26aaa52ba797e29dddac70a96530681fde2411941453ac2e4777bd78
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-5-deploy
+      openshift.io/deployment-config.latest-version: "5"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3389300","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":5,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-17T14:30:30Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-5
+    namespace: mtrivia
+    resourceVersion: "3393444"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-5
+    uid: e86749af-1c3b-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-5
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "5"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-5
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-5
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-6-deploy
+      openshift.io/deployment-config.latest-version: "6"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3393360","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":6,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-17T15:56:16Z
+    generation: 3
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-6
+    namespace: mtrivia
+    resourceVersion: "3393642"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-6
+    uid: e377fa08-1c47-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-6
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "6"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-6
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-6
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:58efeeccbc82fe1d5c54c228e4d2da167cb1b0f7e3418d8049b26f3fbf8fe46c
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-7-deploy
+      openshift.io/deployment-config.latest-version: "7"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"3393549","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:761472987a27f0a83b8d53d40c6076c852f7fda485ecc58a5ed1170656003d6a"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:761472987a27f0a83b8d53d40c6076c852f7fda485ecc58a5ed1170656003d6a","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":7,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-05-17T15:58:15Z
+    generation: 5
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-7
+    namespace: mtrivia
+    resourceVersion: "5172677"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-7
+    uid: 2a2bc381-1c48-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-7
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "7"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-7
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-7
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:761472987a27f0a83b8d53d40c6076c852f7fda485ecc58a5ed1170656003d6a
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 5
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "1"
+      openshift.io/deployer-pod.name: django-8-deploy
+      openshift.io/deployment-config.latest-version: "8"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5172490","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:2efeb10a4e0882d3bec19b6299cc4c39c78d921f1ef4cbe63313b93ca565d313"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:2efeb10a4e0882d3bec19b6299cc4c39c78d921f1ef4cbe63313b93ca565d313","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":8,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T15:25:57Z
+    generation: 5
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-8
+    namespace: mtrivia
+    resourceVersion: "5175119"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-8
+    uid: 4e094fc4-28d6-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-8
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "8"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-8
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-8
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:2efeb10a4e0882d3bec19b6299cc4c39c78d921f1ef4cbe63313b93ca565d313
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 5
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/original-replicas: "0"
+      openshift.io/deployer-pod.name: django-9-deploy
+      openshift.io/deployment-config.latest-version: "9"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"django","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/django","uid":"e2dd9971-1b8f-11e6-9c79-005056ab4e14","resourceVersion":"5174883","creationTimestamp":"2016-05-16T17:59:08Z","labels":{"app":"django"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["django"],"from":{"kind":"ImageStreamTag","name":"django:latest"},"lastTriggeredImage":"172.30.237.129:5000/mtrivia/django@sha256:5a9ecc55ad0eb8275ba019d1e3c2a882b9346caa55bf59b3bc46f31c72b53e40"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"deploymentconfig":"django"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"django","deploymentconfig":"django"}},"spec":{"containers":[{"name":"django","image":"172.30.237.129:5000/mtrivia/django@sha256:5a9ecc55ad0eb8275ba019d1e3c2a882b9346caa55bf59b3bc46f31c72b53e40","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":9,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"django:latest"}}}]}}}
+    creationTimestamp: 2016-06-02T15:49:57Z
+    generation: 5
+    labels:
+      app: django
+      openshift.io/deployment-config.name: django
+    name: django-9
+    namespace: mtrivia
+    resourceVersion: "5177863"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/django-9
+    uid: a841475a-28d9-11e6-a6ca-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: django-9
+      deploymentconfig: django
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "9"
+          openshift.io/deployment-config.name: django
+          openshift.io/deployment.name: django-9
+        creationTimestamp: null
+        labels:
+          app: django
+          deployment: django-9
+          deploymentconfig: django
+      spec:
+        containers:
+        - image: 172.30.237.129:5000/mtrivia/django@sha256:5a9ecc55ad0eb8275ba019d1e3c2a882b9346caa55bf59b3bc46f31c72b53e40
+          imagePullPolicy: Always
+          name: django
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 5
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/desired-replicas: "1"
+      openshift.io/deployer-pod.name: jenkins-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: jenkins
+      openshift.io/deployment.phase: Failed
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"jenkins","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/jenkins","uid":"ebdff45a-4ea5-11e6-9dad-005056ab4e14","resourceVersion":"14123546","creationTimestamp":"2016-07-20T18:15:21Z","labels":{"app":"jenkins"},"annotations":{"openshift.io/generated-by":"OpenShiftNewApp"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{}},"triggers":[{"type":"ConfigChange"},{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["jenkins"],"from":{"kind":"ImageStreamTag","name":"jenkins:latest"},"lastTriggeredImage":"library/jenkins@sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8"}}],"replicas":1,"test":false,"selector":{"app":"jenkins","deploymentconfig":"jenkins"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"jenkins","deploymentconfig":"jenkins"},"annotations":{"openshift.io/generated-by":"OpenShiftNewApp"}},"spec":{"volumes":[{"name":"jenkins-volume-1","emptyDir":{}}],"containers":[{"name":"jenkins","image":"library/jenkins@sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8","ports":[{"containerPort":8080,"protocol":"TCP"},{"containerPort":50000,"protocol":"TCP"}],"resources":{},"volumeMounts":[{"name":"jenkins-volume-1","mountPath":"/var/jenkins_home"}],"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":1,"details":{"causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"ImageStreamTag","name":"jenkins:latest"}}}]}}}
+    creationTimestamp: 2016-07-20T20:21:06Z
+    generation: 1
+    labels:
+      app: jenkins
+      openshift.io/deployment-config.name: jenkins
+    name: jenkins-1
+    namespace: mtrivia
+    resourceVersion: "14144181"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/jenkins-1
+    uid: 7d4183d7-4eb7-11e6-9dad-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      app: jenkins
+      deployment: jenkins-1
+      deploymentconfig: jenkins
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: jenkins
+          openshift.io/deployment.name: jenkins-1
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          app: jenkins
+          deployment: jenkins-1
+          deploymentconfig: jenkins
+      spec:
+        containers:
+        - image: library/jenkins@sha256:81c4f2cba31cbdee0548cb426213f60699e5c97d527ab62b31cc89a43bd249f8
+          imagePullPolicy: Always
+          name: jenkins
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 50000
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/jenkins_home
+            name: jenkins-volume-1
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: jenkins-volume-1
+  status:
+    observedGeneration: 1
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/desired-replicas: "1"
+      openshift.io/deployer-pod.name: jenkins2-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: jenkins2
+      openshift.io/deployment.phase: Failed
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"jenkins2","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/jenkins2","uid":"b4ffd565-5291-11e6-8c61-005056ab4e14","resourceVersion":"15310023","creationTimestamp":"2016-07-25T18:00:44Z","labels":{"template":"jenkins-ephemeral-template"}},"spec":{"strategy":{"type":"Recreate","recreateParams":{"timeoutSeconds":600},"resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"containerNames":["jenkins"],"from":{"kind":"ImageStreamTag","namespace":"openshift","name":"jenkins:latest"},"lastTriggeredImage":"172.30.183.221:5000/openshift/jenkins@sha256:9b4d72ecee592d7f9624ee9fc62ea90ead0a07fff862af29a8ece61aa5969af1"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"name":"jenkins2"},"template":{"metadata":{"creationTimestamp":null,"labels":{"name":"jenkins2"}},"spec":{"volumes":[{"name":"jenkins2-data","emptyDir":{}}],"containers":[{"name":"jenkins","image":"172.30.183.221:5000/openshift/jenkins@sha256:9b4d72ecee592d7f9624ee9fc62ea90ead0a07fff862af29a8ece61aa5969af1","env":[{"name":"JENKINS_PASSWORD","value":"password"}],"resources":{"limits":{"memory":"512Mi"}},"volumeMounts":[{"name":"jenkins2-data","mountPath":"/var/lib/jenkins"}],"livenessProbe":{"httpGet":{"path":"/login","port":8080,"scheme":"HTTP"},"initialDelaySeconds":30,"timeoutSeconds":3,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"readinessProbe":{"httpGet":{"path":"/login","port":8080,"scheme":"HTTP"},"initialDelaySeconds":3,"timeoutSeconds":3,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"IfNotPresent","securityContext":{"capabilities":{},"privileged":false}}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":1,"details":{"causes":[{"type":"ConfigChange"}]}}}
+    creationTimestamp: 2016-07-25T18:00:44Z
+    generation: 3
+    labels:
+      openshift.io/deployment-config.name: jenkins2
+      template: jenkins-ephemeral-template
+    name: jenkins2-1
+    namespace: mtrivia
+    resourceVersion: "15312074"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/jenkins2-1
+    uid: b55bdefe-5291-11e6-8c61-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: jenkins2-1
+      deploymentconfig: jenkins2
+      name: jenkins2
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: jenkins2
+          openshift.io/deployment.name: jenkins2-1
+        creationTimestamp: null
+        labels:
+          deployment: jenkins2-1
+          deploymentconfig: jenkins2
+          name: jenkins2
+      spec:
+        containers:
+        - env:
+          - name: JENKINS_PASSWORD
+            value: password
+          image: 172.30.183.221:5000/openshift/jenkins@sha256:9b4d72ecee592d7f9624ee9fc62ea90ead0a07fff862af29a8ece61aa5969af1
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 3
+          name: jenkins
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 3
+            timeoutSeconds: 3
+          resources:
+            limits:
+              memory: 512Mi
+          securityContext:
+            capabilities: {}
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/lib/jenkins
+            name: jenkins2-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: jenkins2-data
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      openshift.io/deployer-pod.name: mysql-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: mysql
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "0"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"mysql","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/mysql","uid":"859e4573-1ba4-11e6-9c79-005056ab4e14","resourceVersion":"3347471","creationTimestamp":"2016-05-16T20:26:51Z","labels":{"template":"mysql-ephemeral-template"}},"spec":{"strategy":{"type":"Recreate","resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"containerNames":["mysql"],"from":{"kind":"ImageStreamTag","namespace":"openshift","name":"mysql:latest"},"lastTriggeredImage":"registry.access.redhat.com/rhscl/mysql-56-rhel7:latest"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"name":"mysql"},"template":{"metadata":{"creationTimestamp":null,"labels":{"name":"mysql"}},"spec":{"volumes":[{"name":"mysql-data","emptyDir":{}}],"containers":[{"name":"mysql","image":"registry.access.redhat.com/rhscl/mysql-56-rhel7:latest","ports":[{"containerPort":3306,"protocol":"TCP"}],"env":[{"name":"MYSQL_USER","value":"admin"},{"name":"MYSQL_PASSWORD","value":"admin"},{"name":"MYSQL_DATABASE","value":"db"}],"resources":{},"volumeMounts":[{"name":"mysql-data","mountPath":"/var/lib/mysql/data"}],"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"IfNotPresent","securityContext":{"capabilities":{},"privileged":false}}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":1,"details":{"causes":[{"type":"ConfigChange"}]}}}
+    creationTimestamp: 2016-05-16T20:26:51Z
+    generation: 3
+    labels:
+      openshift.io/deployment-config.name: mysql
+      template: mysql-ephemeral-template
+    name: mysql-1
+    namespace: mtrivia
+    resourceVersion: "3392922"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/mysql-1
+    uid: 85a333a7-1ba4-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 0
+    selector:
+      deployment: mysql-1
+      deploymentconfig: mysql
+      name: mysql
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: mysql
+          openshift.io/deployment.name: mysql-1
+        creationTimestamp: null
+        labels:
+          deployment: mysql-1
+          deploymentconfig: mysql
+          name: mysql
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_USER
+            value: admin
+          - name: MYSQL_PASSWORD
+            value: admin
+          - name: MYSQL_DATABASE
+            value: db
+          image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+          imagePullPolicy: IfNotPresent
+          name: mysql
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          resources: {}
+          securityContext:
+            capabilities: {}
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/lib/mysql/data
+            name: mysql-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: mysql-data
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      openshift.io/deployer-pod.name: mysql-2-deploy
+      openshift.io/deployment-config.latest-version: "2"
+      openshift.io/deployment-config.name: mysql
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "1"
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"mysql","namespace":"mtrivia","selfLink":"/oapi/v1/namespaces/mtrivia/deploymentconfigs/mysql","uid":"859e4573-1ba4-11e6-9c79-005056ab4e14","resourceVersion":"3392835","creationTimestamp":"2016-05-16T20:26:51Z","labels":{"template":"mysql-ephemeral-template"}},"spec":{"strategy":{"type":"Recreate","resources":{}},"triggers":[{"type":"ImageChange","imageChangeParams":{"containerNames":["mysql"],"from":{"kind":"ImageStreamTag","namespace":"openshift","name":"mysql:latest"},"lastTriggeredImage":"registry.access.redhat.com/rhscl/mysql-56-rhel7:latest"}},{"type":"ConfigChange"}],"replicas":1,"selector":{"name":"mysql"},"template":{"metadata":{"creationTimestamp":null,"labels":{"name":"mysql"}},"spec":{"volumes":[{"name":"mysql-data","emptyDir":{}}],"containers":[{"name":"mysql","image":"registry.access.redhat.com/rhscl/mysql-56-rhel7:latest","ports":[{"containerPort":3306,"protocol":"TCP"}],"env":[{"name":"MYSQL_USER","value":"admin"},{"name":"MYSQL_PASSWORD","value":"admin"},{"name":"MYSQL_DATABASE","value":"db"}],"resources":{},"volumeMounts":[{"name":"mysql-data","mountPath":"/var/lib/mysql/data"}],"terminationMessagePath":"/dev/termination-log","imagePullPolicy":"IfNotPresent","securityContext":{"capabilities":{},"privileged":false}}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{}}}},"status":{"latestVersion":2,"details":{"causes":[{"type":"ConfigChange"}]}}}
+    creationTimestamp: 2016-05-17T15:45:53Z
+    generation: 2
+    labels:
+      openshift.io/deployment-config.name: mysql
+      template: mysql-ephemeral-template
+    name: mysql-2
+    namespace: mtrivia
+    resourceVersion: "13899888"
+    selfLink: /api/v1/namespaces/mtrivia/replicationcontrollers/mysql-2
+    uid: 6fd6e631-1c46-11e6-9c79-005056ab4e14
+  spec:
+    replicas: 1
+    selector:
+      deployment: mysql-2
+      deploymentconfig: mysql
+      name: mysql
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "2"
+          openshift.io/deployment-config.name: mysql
+          openshift.io/deployment.name: mysql-2
+        creationTimestamp: null
+        labels:
+          deployment: mysql-2
+          deploymentconfig: mysql
+          name: mysql
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_USER
+            value: admin
+          - name: MYSQL_PASSWORD
+            value: admin
+          - name: MYSQL_DATABASE
+            value: db
+          image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+          imagePullPolicy: IfNotPresent
+          name: mysql
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          resources: {}
+          securityContext:
+            capabilities: {}
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/lib/mysql/data
+            name: mysql-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: mysql-data
+  status:
+    observedGeneration: 2
+    replicas: 1
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/host.generated: "true"
+    creationTimestamp: 2016-05-16T17:59:08Z
+    labels:
+      app: django
+    name: django
+    namespace: mtrivia
+    resourceVersion: "6293099"
+    selfLink: /oapi/v1/namespaces/mtrivia/routes/django
+    uid: e2e2bf0d-1b8f-11e6-9c79-005056ab4e14
+  spec:
+    host: django-mtrivia.openshift.dsc.umich.edu
+    port:
+      targetPort: 8080
+    to:
+      kind: Service
+      name: django
+  status: {}
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: 2016-05-25T15:12:30Z
+    labels:
+      template: jenkins-ephemeral-template
+    name: jenkins
+    namespace: mtrivia
+    resourceVersion: "6293102"
+    selfLink: /oapi/v1/namespaces/mtrivia/routes/jenkins
+    uid: 1985f686-228b-11e6-9b46-005056ab4e14
+  spec:
+    host: jenkins-mtrivia.openshift.dsc.umich.edu
+    tls:
+      caCertificate: |-
+        -----BEGIN CERTIFICATE-----
+        MIIEFzCCAv+gAwIBAgIJALK1iUpF2VQLMA0GCSqGSIb3DQEBBQUAMIGhMQswCQYD
+        VQQGEwJVUzELMAkGA1UECAwCU0MxFTATBgNVBAcMDERlZmF1bHQgQ2l0eTEcMBoG
+        A1UECgwTRGVmYXVsdCBDb21wYW55IEx0ZDEQMA4GA1UECwwHVGVzdCBDQTEaMBgG
+        A1UEAwwRd3d3LmV4YW1wbGVjYS5jb20xIjAgBgkqhkiG9w0BCQEWE2V4YW1wbGVA
+        ZXhhbXBsZS5jb20wHhcNMTUwMTEyMTQxNTAxWhcNMjUwMTA5MTQxNTAxWjCBoTEL
+        MAkGA1UEBhMCVVMxCzAJBgNVBAgMAlNDMRUwEwYDVQQHDAxEZWZhdWx0IENpdHkx
+        HDAaBgNVBAoME0RlZmF1bHQgQ29tcGFueSBMdGQxEDAOBgNVBAsMB1Rlc3QgQ0Ex
+        GjAYBgNVBAMMEXd3dy5leGFtcGxlY2EuY29tMSIwIAYJKoZIhvcNAQkBFhNleGFt
+        cGxlQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+        w2rK1J2NMtQj0KDug7g7HRKl5jbf0QMkMKyTU1fBtZ0cCzvsF4CqV11LK4BSVWaK
+        rzkaXe99IVJnH8KdOlDl5Dh/+cJ3xdkClSyeUT4zgb6CCBqg78ePp+nN11JKuJlV
+        IG1qdJpB1J5O/kCLsGcTf7RS74MtqMFo96446Zvt7YaBhWPz6gDaO/TUzfrNcGLA
+        EfHVXkvVWqb3gqXUztZyVex/gtP9FXQ7gxTvJml7UkmT0VAFjtZnCqmFxpLZFZ15
+        +qP9O7Q2MpsGUO/4vDAuYrKBeg1ZdPSi8gwqUP2qWsGd9MIWRv3thI2903BczDc7
+        r8WaIbm37vYZAS9G56E4+wIDAQABo1AwTjAdBgNVHQ4EFgQUugLrSJshOBk5TSsU
+        ANs4+SmJUGwwHwYDVR0jBBgwFoAUugLrSJshOBk5TSsUANs4+SmJUGwwDAYDVR0T
+        BAUwAwEB/zANBgkqhkiG9w0BAQUFAAOCAQEAaMJ33zAMV4korHo5aPfayV3uHoYZ
+        1ChzP3eSsF+FjoscpoNSKs91ZXZF6LquzoNezbfiihK4PYqgwVD2+O0/Ty7UjN4S
+        qzFKVR4OS/6lCJ8YncxoFpTntbvjgojf1DEataKFUN196PAANc3yz8cWHF4uvjPv
+        WkgFqbIjb+7D1YgglNyovXkRDlRZl0LD1OQ0ZWhd4Ge1qx8mmmanoBeYZ9+DgpFC
+        j9tQAbS867yeOryNe7sEOIpXAAqK/DTu0hB6+ySsDfMo4piXCc2aA/eI2DCuw08e
+        w17Dz9WnupZjVdwTKzDhFgJZMLDqn37HQnT6EemLFqbcR0VPEnfyhDtZIQ==
+        -----END CERTIFICATE-----
+      certificate: |-
+        -----BEGIN CERTIFICATE-----
+        MIIDIjCCAgqgAwIBAgIBATANBgkqhkiG9w0BAQUFADCBoTELMAkGA1UEBhMCVVMx
+        CzAJBgNVBAgMAlNDMRUwEwYDVQQHDAxEZWZhdWx0IENpdHkxHDAaBgNVBAoME0Rl
+        ZmF1bHQgQ29tcGFueSBMdGQxEDAOBgNVBAsMB1Rlc3QgQ0ExGjAYBgNVBAMMEXd3
+        dy5leGFtcGxlY2EuY29tMSIwIAYJKoZIhvcNAQkBFhNleGFtcGxlQGV4YW1wbGUu
+        Y29tMB4XDTE1MDExMjE0MTk0MVoXDTE2MDExMjE0MTk0MVowfDEYMBYGA1UEAwwP
+        d3d3LmV4YW1wbGUuY29tMQswCQYDVQQIDAJTQzELMAkGA1UEBhMCVVMxIjAgBgkq
+        hkiG9w0BCQEWE2V4YW1wbGVAZXhhbXBsZS5jb20xEDAOBgNVBAoMB0V4YW1wbGUx
+        EDAOBgNVBAsMB0V4YW1wbGUwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMrv
+        gu6ZTTefNN7jjiZbS/xvQjyXjYMN7oVXv76jbX8gjMOmg9m0xoVZZFAE4XyQDuCm
+        47VRx5Qrf/YLXmB2VtCFvB0AhXr5zSeWzPwaAPrjA4ebG+LUo24ziS8KqNxrFs1M
+        mNrQUgZyQC6XIe1JHXc9t+JlL5UZyZQC1IfaJulDAgMBAAGjDTALMAkGA1UdEwQC
+        MAAwDQYJKoZIhvcNAQEFBQADggEBAFCi7ZlkMnESvzlZCvv82Pq6S46AAOTPXdFd
+        TMvrh12E1sdVALF1P1oYFJzG1EiZ5ezOx88fEDTW+Lxb9anw5/KJzwtWcfsupf1m
+        V7J0D3qKzw5C1wjzYHh9/Pz7B1D0KthQRATQCfNf8s6bbFLaw/dmiIUhHLtIH5Qc
+        yfrejTZbOSP77z8NOWir+BWWgIDDB2//3AkDIQvT20vmkZRhkqSdT7et4NmXOX/j
+        jhPti4b2Fie0LeuvgaOdKjCpQQNrYthZHXeVlOLRhMTSk3qUczenkKTOhvP7IS9q
+        +Dzv5hqgSfvMG392KWh5f8xXfJNs4W5KLbZyl901MeReiLrPH3w=
+        -----END CERTIFICATE-----
+      key: |-
+        -----BEGIN PRIVATE KEY-----
+        MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAMrvgu6ZTTefNN7j
+        jiZbS/xvQjyXjYMN7oVXv76jbX8gjMOmg9m0xoVZZFAE4XyQDuCm47VRx5Qrf/YL
+        XmB2VtCFvB0AhXr5zSeWzPwaAPrjA4ebG+LUo24ziS8KqNxrFs1MmNrQUgZyQC6X
+        Ie1JHXc9t+JlL5UZyZQC1IfaJulDAgMBAAECgYEAnxOjEj/vrLNLMZE1Q9H7PZVF
+        WdP/JQVNvQ7tCpZ3ZdjxHwkvf//aQnuxS5yX2Rnf37BS/TZu+TIkK4373CfHomSx
+        UTAn2FsLmOJljupgGcoeLx5K5nu7B7rY5L1NHvdpxZ4YjeISrRtEPvRakllENU5y
+        gJE8c2eQOx08ZSRE4TkCQQD7dws2/FldqwdjJucYijsJVuUdoTqxP8gWL6bB251q
+        elP2/a6W2elqOcWId28560jG9ZS3cuKvnmu/4LG88vZFAkEAzphrH3673oTsHN+d
+        uBd5uyrlnGjWjuiMKv2TPITZcWBjB8nJDSvLneHF59MYwejNNEof2tRjgFSdImFH
+        mi995wJBAMtPjW6wiqRz0i41VuT9ZgwACJBzOdvzQJfHgSD9qgFb1CU/J/hpSRIM
+        kYvrXK9MbvQFvG6x4VuyT1W8mpe1LK0CQAo8VPpffhFdRpF7psXLK/XQ/0VLkG3O
+        KburipLyBg/u9ZkaL0Ley5zL5dFBjTV2Qkx367Ic2b0u9AYTCcgi2DsCQQD3zZ7B
+        v7BOm7MkylKokY2MduFFXU0Bxg6pfZ7q3rvg8gqhUFbaMStPRYg6myiDiW/JfLhF
+        TcFT4touIo7oriFJ
+        -----END PRIVATE KEY-----
+      termination: edge
+    to:
+      kind: Service
+      name: admin
+  status: {}
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: 2016-05-17T14:41:48Z
+    labels:
+      template: mysql-ephemeral-template
+    name: mysql
+    namespace: mtrivia
+    resourceVersion: "6293101"
+    selfLink: /oapi/v1/namespaces/mtrivia/routes/mysql
+    uid: 7c85a14f-1c3d-11e6-9c79-005056ab4e14
+  spec:
+    host: mysql-mtrivia.openshift.dsc.umich.edu
+    port:
+      targetPort: 3306
+    to:
+      kind: Service
+      name: mysql
+  status: {}
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: 2016-07-20T17:58:08Z
+    labels:
+      template: jenkins-persistent-template
+    name: template-test
+    namespace: mtrivia
+    resourceVersion: "14120428"
+    selfLink: /oapi/v1/namespaces/mtrivia/routes/template-test
+    uid: 84685c56-4ea3-11e6-9dad-005056ab4e14
+  spec:
+    host: template-test-mtrivia.openshift.dsc.umich.edu
+    port:
+      targetPort: web
+    to:
+      kind: Service
+      name: template-test
+  status: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2016-05-16T17:59:08Z
+    labels:
+      app: django
+    name: django
+    namespace: mtrivia
+    resourceVersion: "3341243"
+    selfLink: /api/v1/namespaces/mtrivia/services/django
+    uid: e2e2da2b-1b8f-11e6-9c79-005056ab4e14
+  spec:
+    clusterIP: 172.30.44.15
+    portalIP: 172.30.44.15
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deploymentconfig: django
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: 2016-07-25T18:00:44Z
+    labels:
+      template: jenkins-ephemeral-template
+    name: jenkins2
+    namespace: mtrivia
+    resourceVersion: "15310022"
+    selfLink: /api/v1/namespaces/mtrivia/services/jenkins2
+    uid: b55065ff-5291-11e6-8c61-005056ab4e14
+  spec:
+    clusterIP: 172.30.29.211
+    portalIP: 172.30.29.211
+    ports:
+    - name: web
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      name: jenkins2
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: 2016-05-16T20:26:51Z
+    labels:
+      template: mysql-ephemeral-template
+    name: mysql
+    namespace: mtrivia
+    resourceVersion: "3347470"
+    selfLink: /api/v1/namespaces/mtrivia/services/mysql
+    uid: 859f2ed4-1ba4-11e6-9c79-005056ab4e14
+  spec:
+    clusterIP: 172.30.235.93
+    portalIP: 172.30.235.93
+    ports:
+    - name: mysql
+      port: 3306
+      protocol: TCP
+      targetPort: 3306
+    selector:
+      name: mysql
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubernetes.io/created-by: |
+        {"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicationController","namespace":"mtrivia","name":"django-26","uid":"d61d5898-3c7d-11e6-a40d-005056ab4e14","apiVersion":"v1","resourceVersion":"13897139"}}
+      openshift.io/deployment-config.latest-version: "26"
+      openshift.io/deployment-config.name: django
+      openshift.io/deployment.name: django-26
+      openshift.io/scc: restricted
+    creationTimestamp: 2016-07-19T19:15:53Z
+    generateName: django-26-
+    labels:
+      app: django
+      deployment: django-26
+      deploymentconfig: django
+    name: django-26-2qf4r
+    namespace: mtrivia
+    resourceVersion: "15910609"
+    selfLink: /api/v1/namespaces/mtrivia/pods/django-26-2qf4r
+    uid: 3638d5c0-4de5-11e6-9dad-005056ab4e14
+  spec:
+    containers:
+    - image: 172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+      imagePullPolicy: Always
+      name: django
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+          - SYS_CHROOT
+        privileged: false
+        seLinuxOptions:
+          level: s0:c16,c10
+      terminationMessagePath: /dev/termination-log
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-qk76f
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    host: os-node3.dsc.umich.edu
+    imagePullSecrets:
+    - name: default-dockercfg-z8lax
+    nodeName: os-node3.dsc.umich.edu
+    restartPolicy: Always
+    securityContext:
+      fsGroup: 1000260000
+      seLinuxOptions:
+        level: s0:c16,c10
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: default-token-qk76f
+      secret:
+        secretName: default-token-qk76f
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2016-07-19T19:15:53Z
+      message: 'containers with unready status: [django]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    containerStatuses:
+    - image: 172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5
+      imageID: ""
+      lastState: {}
+      name: django
+      ready: false
+      restartCount: 0
+      state:
+        waiting:
+          message: Back-off pulling image "172.30.237.129:5000/mtrivia/django@sha256:5f37b7924acc6b80f1cb7759dace85fe2789e14ae63043490564018b56e010e5"
+          reason: ImagePullBackOff
+    hostIP: 141.211.54.26
+    phase: Pending
+    podIP: 10.80.0.11
+    startTime: 2016-07-19T19:15:53Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/deployment.name: jenkins-1
+      openshift.io/scc: restricted
+    creationTimestamp: 2016-07-20T18:15:23Z
+    labels:
+      openshift.io/deployer-pod-for.name: jenkins-1
+    name: jenkins-1-deploy
+    namespace: mtrivia
+    resourceVersion: "14125316"
+    selfLink: /api/v1/namespaces/mtrivia/pods/jenkins-1-deploy
+    uid: ed0da95e-4ea5-11e6-9dad-005056ab4e14
+  spec:
+    activeDeadlineSeconds: 21600
+    containers:
+    - env:
+      - name: KUBERNETES_MASTER
+        value: https://os-master1.dsc.umich.edu:8443
+      - name: OPENSHIFT_MASTER
+        value: https://os-master1.dsc.umich.edu:8443
+      - name: BEARER_TOKEN_FILE
+        value: /var/run/secrets/kubernetes.io/serviceaccount/token
+      - name: OPENSHIFT_CA_DATA
+        value: |
+          -----BEGIN CERTIFICATE-----
+          MIIC5jCCAdCgAwIBAgIBATALBgkqhkiG9w0BAQswJjEkMCIGA1UEAwwbb3BlbnNo
+          aWZ0LXNpZ25lckAxNDU4MzA2NTYwMB4XDTE2MDMxODEzMDkyMloXDTIxMDMxNzEz
+          MDkyM1owJjEkMCIGA1UEAwwbb3BlbnNoaWZ0LXNpZ25lckAxNDU4MzA2NTYwMIIB
+          IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvRD0BWzIL9cFbsyUojRgHfrC
+          mV08WBMcD7xQqf6Bktvoa1QyzCm7UoY28JcjXefZ0PYyMCU1caoPL1H3fFTaaq7n
+          7Ptbgc77MuZdplfDpnVkSqbCtplRR5Q5b/M1KKYwi/aCzAvtD1+CabK02ZKYS6BG
+          pe5Rk7rO1vD5qkS5qcuZ6+NImdko1rNkrdLMKUUElTWncTSK92jHBr5wseizqBf9
+          QiHYBoCU/9LjO3j3M2OKsmaams9gH32olEPfcQvEjd/hNnVNPAIxqP6uVLM1o0IJ
+          jYB/cIomeMX45OmVU/F9qkjEKkcJh+3/ddeuoHgB00NeiyT/yFRuNj/Z3vVFKwID
+          AQABoyMwITAOBgNVHQ8BAf8EBAMCAKQwDwYDVR0TAQH/BAUwAwEB/zALBgkqhkiG
+          9w0BAQsDggEBAGftT2GSYgjM8BH3BbX0TFxlyray6sJL6hTJQL5aAKwb8h3PxyrK
+          2YYynzdbpfpoVExey9S5yaXHCVZPUNMACS6PMJ1ni4fH0rVhMVrBxgZX49k9pu2s
+          iDyr4rQuBDQ/OIr+IW3PdAdxl1eaowkdg5nNwejthMEOTEc9hESRO7TjNW60snVm
+          cbSlDe0ulMIWmZzUR0yQTT4kHncr6mOUvALEjQf9RmNZNKAx7HyYkmtg6b8a/aaP
+          vGMadJkOwdvh2mwW3DwziXe1u/pftd+1c2l5CIa12VhL4xnTX6wD8SYTrOEPet+Q
+          6may6RgMW+hJYg+akV3hfqYUY86H94MytHc=
+          -----END CERTIFICATE-----
+      - name: OPENSHIFT_DEPLOYMENT_NAME
+        value: jenkins-1
+      - name: OPENSHIFT_DEPLOYMENT_NAMESPACE
+        value: mtrivia
+      image: openshift3/ose-deployer:v3.2.1.7
+      imagePullPolicy: IfNotPresent
+      name: deployment
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+          - SYS_CHROOT
+        privileged: false
+        seLinuxOptions:
+          level: s0:c16,c10
+      terminationMessagePath: /dev/termination-log
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: deployer-token-9na9m
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    host: os-node4.dsc.umich.edu
+    imagePullSecrets:
+    - name: deployer-dockercfg-gzlbp
+    nodeName: os-node4.dsc.umich.edu
+    restartPolicy: Never
+    securityContext:
+      fsGroup: 1000260000
+      seLinuxOptions:
+        level: s0:c16,c10
+    serviceAccount: deployer
+    serviceAccountName: deployer
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: deployer-token-9na9m
+      secret:
+        secretName: deployer-token-9na9m
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2016-07-20T18:25:31Z
+      message: 'containers with unready status: [deployment]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    containerStatuses:
+    - containerID: docker://05c1b190298b067d638e6af1e4a1171e9584d51cb4dc4319475019b44b0abf7b
+      image: openshift3/ose-deployer:v3.2.1.7
+      imageID: docker://sha256:12ab473dfc2ad844974b43bb8f4718d0341073b3546e6648675121dc6ba4e6d7
+      lastState: {}
+      name: deployment
+      ready: false
+      restartCount: 0
+      state:
+        terminated:
+          containerID: docker://05c1b190298b067d638e6af1e4a1171e9584d51cb4dc4319475019b44b0abf7b
+          exitCode: 255
+          finishedAt: 2016-07-20T18:25:30Z
+          reason: Error
+          startedAt: 2016-07-20T18:15:26Z
+    hostIP: 141.211.54.27
+    phase: Failed
+    podIP: 10.80.1.4
+    startTime: 2016-07-20T18:15:23Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/deployment.name: jenkins2-1
+      openshift.io/scc: restricted
+    creationTimestamp: 2016-07-25T18:00:44Z
+    labels:
+      openshift.io/deployer-pod-for.name: jenkins2-1
+    name: jenkins2-1-deploy
+    namespace: mtrivia
+    resourceVersion: "15312007"
+    selfLink: /api/v1/namespaces/mtrivia/pods/jenkins2-1-deploy
+    uid: b568e9fa-5291-11e6-8c61-005056ab4e14
+  spec:
+    activeDeadlineSeconds: 21600
+    containers:
+    - env:
+      - name: KUBERNETES_MASTER
+        value: https://os-master1.dsc.umich.edu:8443
+      - name: OPENSHIFT_MASTER
+        value: https://os-master1.dsc.umich.edu:8443
+      - name: BEARER_TOKEN_FILE
+        value: /var/run/secrets/kubernetes.io/serviceaccount/token
+      - name: OPENSHIFT_CA_DATA
+        value: |
+          -----BEGIN CERTIFICATE-----
+          MIIC5jCCAdCgAwIBAgIBATALBgkqhkiG9w0BAQswJjEkMCIGA1UEAwwbb3BlbnNo
+          aWZ0LXNpZ25lckAxNDU4MzA2NTYwMB4XDTE2MDMxODEzMDkyMloXDTIxMDMxNzEz
+          MDkyM1owJjEkMCIGA1UEAwwbb3BlbnNoaWZ0LXNpZ25lckAxNDU4MzA2NTYwMIIB
+          IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvRD0BWzIL9cFbsyUojRgHfrC
+          mV08WBMcD7xQqf6Bktvoa1QyzCm7UoY28JcjXefZ0PYyMCU1caoPL1H3fFTaaq7n
+          7Ptbgc77MuZdplfDpnVkSqbCtplRR5Q5b/M1KKYwi/aCzAvtD1+CabK02ZKYS6BG
+          pe5Rk7rO1vD5qkS5qcuZ6+NImdko1rNkrdLMKUUElTWncTSK92jHBr5wseizqBf9
+          QiHYBoCU/9LjO3j3M2OKsmaams9gH32olEPfcQvEjd/hNnVNPAIxqP6uVLM1o0IJ
+          jYB/cIomeMX45OmVU/F9qkjEKkcJh+3/ddeuoHgB00NeiyT/yFRuNj/Z3vVFKwID
+          AQABoyMwITAOBgNVHQ8BAf8EBAMCAKQwDwYDVR0TAQH/BAUwAwEB/zALBgkqhkiG
+          9w0BAQsDggEBAGftT2GSYgjM8BH3BbX0TFxlyray6sJL6hTJQL5aAKwb8h3PxyrK
+          2YYynzdbpfpoVExey9S5yaXHCVZPUNMACS6PMJ1ni4fH0rVhMVrBxgZX49k9pu2s
+          iDyr4rQuBDQ/OIr+IW3PdAdxl1eaowkdg5nNwejthMEOTEc9hESRO7TjNW60snVm
+          cbSlDe0ulMIWmZzUR0yQTT4kHncr6mOUvALEjQf9RmNZNKAx7HyYkmtg6b8a/aaP
+          vGMadJkOwdvh2mwW3DwziXe1u/pftd+1c2l5CIa12VhL4xnTX6wD8SYTrOEPet+Q
+          6may6RgMW+hJYg+akV3hfqYUY86H94MytHc=
+          -----END CERTIFICATE-----
+      - name: OPENSHIFT_DEPLOYMENT_NAME
+        value: jenkins2-1
+      - name: OPENSHIFT_DEPLOYMENT_NAMESPACE
+        value: mtrivia
+      image: openshift3/ose-deployer:v3.2.1.7
+      imagePullPolicy: IfNotPresent
+      name: deployment
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+          - SYS_CHROOT
+        privileged: false
+        seLinuxOptions:
+          level: s0:c16,c10
+      terminationMessagePath: /dev/termination-log
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: deployer-token-9na9m
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    host: os-node4.dsc.umich.edu
+    imagePullSecrets:
+    - name: deployer-dockercfg-gzlbp
+    nodeName: os-node4.dsc.umich.edu
+    restartPolicy: Never
+    securityContext:
+      fsGroup: 1000260000
+      seLinuxOptions:
+        level: s0:c16,c10
+    serviceAccount: deployer
+    serviceAccountName: deployer
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: deployer-token-9na9m
+      secret:
+        secretName: deployer-token-9na9m
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2016-07-25T18:10:51Z
+      message: 'containers with unready status: [deployment]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    containerStatuses:
+    - containerID: docker://f9b6881a80d0596e231299e0eac0e456285019b2676bde76c55c65d5c19bf12a
+      image: openshift3/ose-deployer:v3.2.1.7
+      imageID: docker://sha256:12ab473dfc2ad844974b43bb8f4718d0341073b3546e6648675121dc6ba4e6d7
+      lastState: {}
+      name: deployment
+      ready: false
+      restartCount: 0
+      state:
+        terminated:
+          containerID: docker://f9b6881a80d0596e231299e0eac0e456285019b2676bde76c55c65d5c19bf12a
+          exitCode: 255
+          finishedAt: 2016-07-25T18:10:50Z
+          reason: Error
+          startedAt: 2016-07-25T18:00:47Z
+    hostIP: 141.211.54.27
+    phase: Failed
+    podIP: 10.80.1.5
+    startTime: 2016-07-25T18:00:44Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubernetes.io/created-by: |
+        {"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicationController","namespace":"mtrivia","name":"mysql-2","uid":"6fd6e631-1c46-11e6-9c79-005056ab4e14","apiVersion":"v1","resourceVersion":"13897140"}}
+      openshift.io/deployment-config.latest-version: "2"
+      openshift.io/deployment-config.name: mysql
+      openshift.io/deployment.name: mysql-2
+      openshift.io/scc: restricted
+    creationTimestamp: 2016-07-19T19:15:53Z
+    generateName: mysql-2-
+    labels:
+      deployment: mysql-2
+      deploymentconfig: mysql
+      name: mysql
+    name: mysql-2-j8a7i
+    namespace: mtrivia
+    resourceVersion: "13900213"
+    selfLink: /api/v1/namespaces/mtrivia/pods/mysql-2-j8a7i
+    uid: 364bbeaa-4de5-11e6-9dad-005056ab4e14
+  spec:
+    containers:
+    - env:
+      - name: MYSQL_USER
+        value: admin
+      - name: MYSQL_PASSWORD
+        value: admin
+      - name: MYSQL_DATABASE
+        value: db
+      image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+      imagePullPolicy: IfNotPresent
+      name: mysql
+      ports:
+      - containerPort: 3306
+        protocol: TCP
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+          - SYS_CHROOT
+        privileged: false
+        seLinuxOptions:
+          level: s0:c16,c10
+      terminationMessagePath: /dev/termination-log
+      volumeMounts:
+      - mountPath: /var/lib/mysql/data
+        name: mysql-data
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-qk76f
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    host: os-node3.dsc.umich.edu
+    imagePullSecrets:
+    - name: default-dockercfg-z8lax
+    nodeName: os-node3.dsc.umich.edu
+    restartPolicy: Always
+    securityContext:
+      fsGroup: 1000260000
+      seLinuxOptions:
+        level: s0:c16,c10
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - emptyDir: {}
+      name: mysql-data
+    - name: default-token-qk76f
+      secret:
+        secretName: default-token-qk76f
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2016-07-19T19:16:12Z
+      status: "True"
+      type: Ready
+    containerStatuses:
+    - containerID: docker://915615de94468f784ffde75c9313ce64482a6e66c7c0c17d35c04982012ba547
+      image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+      imageID: docker://sha256:d76b36959a8ff78327ae1c80c337d4a5de8f2e22148b3da9af18e7e8108077d8
+      lastState: {}
+      name: mysql
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2016-07-19T19:16:11Z
+    hostIP: 141.211.54.26
+    phase: Running
+    podIP: 10.80.0.17
+    startTime: 2016-07-19T19:15:54Z
+kind: List
+metadata: {}
