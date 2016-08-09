@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6fc1d455-b60c-47b6-9499-35b0e0954d5d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcube/static/js/calculator.js" afterPath="$PROJECT_DIR$/mcube/static/js/calculator.js" />
     </list>
     <ignored path="OpenShift Enterprise.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,8 +109,8 @@
       <file leaf-file-name="calculator.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcube/static/js/calculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="41">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -891,8 +890,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcube/static/js/calculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="41">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
         </state>
       </provider>
