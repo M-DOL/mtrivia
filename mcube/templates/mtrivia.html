@@ -1,6 +1,63 @@
-{% extends 'base.html' %}
-{% block content %}
- <p class="header">MTrivia</p>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--link rel="icon" href="../static/favicon.ico"-->
+
+    <title>MTrivia</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <!--link href="jumbotron.css" rel="stylesheet"-->
+	<link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/game">Game</a>
+            <a class="navbar-brand" href="/leaderboard">Leaderboard</a>
+            <a class="navbar-brand" href="/calculator">Calculator</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <div class="navbar-form navbar-right">
+              <a href="/newuser">
+        <button class="btn btn-primary">New User</button>
+        </a>
+            </div>
+          <form class="navbar-form navbar-right" action="/login/" method="post">
+              {% csrf_token %}
+              {% for field in login %}
+            <div class="form-group">
+              {{ field }}
+            </div>
+              {% endfor %}
+            <button type="submit" class="btn btn-success" name="login">Sign in</button>
+          </form>
+
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <p class="header">MTrivia</p>
     <div class="template-wrap clear">
       <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
       <br>
@@ -19,4 +76,16 @@
   };
 </script>
 <script src="Release/UnityLoader.js"></script>
-{% endblock %}
+    <div class="navbar navbar-fixed-bottom col-md-offset-10">
+    <footer>
+        <p>&copy; Matt Dolan, 2016</p>
+      </footer>
+        </div>
+  </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </html>
