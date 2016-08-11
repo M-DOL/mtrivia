@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fc1d455-b60c-47b6-9499-35b0e0954d5d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcube/templates/new_user.html" afterPath="$PROJECT_DIR$/mcube/templates/new_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/settings.py" afterPath="$PROJECT_DIR$/project/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcube/templates/mtrivia.html" afterPath="$PROJECT_DIR$/mcube/templates/mtrivia.html" />
     </list>
     <ignored path="OpenShift Enterprise.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,16 +54,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="leaderboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mcube/templates/leaderboard.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,12 +76,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="412">
               <caret line="102" column="75" selection-start-line="102" selection-start-column="75" selection-end-line="102" selection-end-column="75" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mtrivia.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mcube/templates/mtrivia.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,7 +151,6 @@
         <option value="$PROJECT_DIR$/welcome/views.py" />
         <option value="$PROJECT_DIR$/welcome/models.py" />
         <option value="$PROJECT_DIR$/mcube/templates/mcube/myindex.html" />
-        <option value="$PROJECT_DIR$/mcube/templates/mtrivia.html" />
         <option value="$PROJECT_DIR$/mcube/static/js/form_validation.js" />
         <option value="$PROJECT_DIR$/mcube/forms.py" />
         <option value="$PROJECT_DIR$/mcube/templates/myindex.html" />
@@ -170,6 +169,7 @@
         <option value="$PROJECT_DIR$/mcube/views.py" />
         <option value="$PROJECT_DIR$/mcube/static/js/calculator.js" />
         <option value="$PROJECT_DIR$/project/settings.py" />
+        <option value="$PROJECT_DIR$/mcube/templates/mtrivia.html" />
       </list>
     </option>
   </component>
@@ -701,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcube/templates/mtrivia.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mcube/templates/myindex.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -896,6 +889,16 @@
         <state relative-caret-position="412">
           <caret line="102" column="75" selection-start-line="102" selection-start-column="75" selection-end-line="102" selection-end-column="75" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcube/templates/mtrivia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
