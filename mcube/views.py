@@ -46,11 +46,15 @@ def create_user(request):
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        form = form.cleaned_data
-        user = authenticate(username=form.username, password=form.password)
+        if form.is_valid():
+            form = form.cleaned_data
+            print form
+            user = authenticate(username=form['username'], password=form['password'])
+        else:
+            return redirect('/newuser')
         if(user is None):
             #Redirect and error
-            return redirect('/')
+            return redirect('/newuser')
         else:
             request.session['user'] = user
             return redirect('/')
@@ -72,6 +76,7 @@ def health(request):
     return HttpResponse(PageView.objects.count())
 def update_leaderboard(request, score):
     if request.method == 'POST' and 'user' in request.session:
+        score = score.encode('utf-8')
         Scores.objects.create(user=request.session['user'], score=score).save()
 
 def leaderboard(request):

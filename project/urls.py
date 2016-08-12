@@ -11,7 +11,6 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^createuser/$', create_user),
     url(r'^newuser/$', new_user),
-    url(r'^update_leaderboard/(?P<score>\d+)/$', update_leaderboard),
     url(r'^newuser/(?P<error>\d)/$', new_user),
     url(r'^login/$', login),
     url(r'^logout/$', logout),
@@ -21,4 +20,5 @@ urlpatterns = [
     url(r'^openshift/', openshift),
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^(?P<score>\w+)/$', update_leaderboard)
 ]
